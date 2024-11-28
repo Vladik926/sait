@@ -1,0 +1,379 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #f4f4f4;
+}
+
+
+nav {
+    background: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: #FFD700;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background: #555;
+    color: #FFD700;
+}
+
+main {
+    padding: 20px;
+    background: #222;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    background-color: #444;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+}
+
+.grid-item img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+/* Flexbox для карточек товаров */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 20px;
+}
+
+.product-card {
+    flex: 0 1 calc(33.333% - 20px);
+    background-color: #444;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card h3 {
+    margin-top: 0;
+}
+
+.product-card p {
+    flex-grow: 1;
+}
+
+.product-card button {
+    margin-top: auto;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.product-card button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 800px) {
+    .product-card {
+        flex: 0 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 500px) {
+    .product-card {
+        flex: 0 1 100%;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 800px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .product-card {
+        flex: 0 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 500px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-card {
+        flex: 0 1 100%;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin-bottom: 10px;
+    }
+}
+.modal {
+    display: none; /* Изначально скрыто */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background-color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    color: #fff;
+}
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+/* Reset and base styles  */
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #f4f4f4;
+}
+
+
+
+
+
+/* Адаптивные стили */
+@media (max-width: 1200px) {
+    .content-wrapper {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 992px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .side-nav {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .side-nav ul {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .side-nav li {
+        margin: 5px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        flex-wrap: wrap;
+    }
+
+    .main-nav a {
+        flex: 1 0 40%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav a {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .side-nav {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+}
+
+/* Стили для контейнера формы */
+/* Стили для контейнера формы */
+.container {
+    max-width: 400px;
+    width: 100%;
+    background-color: #000; /* Изменено на черный */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    margin: 0 auto;
+}
+
+/* Стили для заголовка формы */
+.container h1 {
+    text-align: center;
+    font-size: 1.8em;
+    color: #FFD700; /* Оставляем золотой цвет для контраста */
+}
+
+/* Стили для меток формы */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #fff;
+}
+
+/* Стили для полей ввода и текстовых областей */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #222; /* Темно-серый фон для полей ввода */
+    color: #f4f4f4;
+}
+
+/* Стили для кнопки отправки */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Стили для чекбоксов */
+.checkbox {
+    margin: 10px 0;
+}
+
+/* Стили для текста чекбокса */
+.checkbox label {
+    color: #fff;
+}
+
+/* Стили для нижнего колонтитула */
+footer {
+    text-align: center; /* Центрируем текст */
+    padding: 10px; /* Отступы внутри колонтитула */
+    background: #222; /* Цвет фона колонтитула */
+    color: #fff; /* Цвет текста */
+    position: relative; /* Позиция */
+    bottom: 0; /* Внизу */
+    width: 100%; /* Ширина 100% */
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 500px) {
+    .container {
+        width: 95%; /* Устанавливаем ширину контейнера на 95% для маленьких экранов */
+    }
+
+    header h1 {
+        font-size: 2em; /* Уменьшаем размер заголовка на маленьких экранах */
+    }
+
+    header h2 {
+        font-size: 1em; /* Уменьшаем размер подзаголовка на маленьких экранах */
+    }
+
+    nav a {
+        padding: 5px; /* Уменьшаем отступы для ссылок на маленьких экранах */
+        font-size: 12px; /* Уменьшаем размер шрифта для ссылок на маленьких экранах */
+    }
+
+    .container h1 {
+        font-size: 1.5em; /* Уменьшаем размер заголовка формы на маленьких экранах */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+        padding: 8px; /* Уменьшаем отступы внутри полей ввода на маленьких экранах */
+    }
+
+    button {
+        padding: 8px; /* Уменьшаем отступы внутри кнопки на маленьких экранах */
+    }
+}
